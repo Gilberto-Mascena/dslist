@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### macOS ###
+**/._*
+**/._.*
+DS_Store
