@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: |
+          #body: |
             Primeira Release
 
            # - Primeira Mudança:
