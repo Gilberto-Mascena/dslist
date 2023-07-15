@@ -18,14 +18,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          #body: |
-            Primeira Release
-
-           # - Primeira Mudança:
-            #  Adicionado OpenShell.efi.
-
-            #- Segunda Mudança:
-            #  Recomendado para depuração, a partir do menu do OpenCore.
+          release_name: Release ${{ github.ref }}          
           draft: false
           prerelease: false
