@@ -7,23 +7,36 @@ name: Create Release
 
 jobs:
   build:
-    name: Create Release
-    runs-on: ubuntu-latest
+    name: Upload Release Asset
+    runs-on: ubuntu-latest    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 
+
+      - name: Build project 
+        run: |
+          zip -q -r dslist.zip ./dslist
+          ls -l *.zip
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: |
-            _**Primeira Versão**_
-
-            - Implementação:
-              _Aplicação Beckend `Java e Spring Boot`, de listas de jogos sem interface gráfica._
+          body_path: CHANGELOG.md
           draft: false
           prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}  
+          asset_path: ./dslist.zip
+          asset_name: dslist.zip
+          asset_content_type: application/zip
