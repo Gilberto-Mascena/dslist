@@ -32,3 +32,12 @@
           
   <img align="center" alt="Gilberto Mascena-github" height="30" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+
+   ##
+
+   ## *Licença* 
+
+*The* [*MIT License*](LICENSE.md) (*MIT*)
+
+*Copyright :copyright: 2023* 
+##
