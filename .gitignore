@@ -35,4 +35,4 @@ build/
 ### macOS ###
 **/._*
 **/._.*
-DS_Store
+.DS_Store

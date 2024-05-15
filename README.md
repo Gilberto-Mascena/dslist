@@ -15,22 +15,22 @@
 <img alingn="center" alt="Gilberto Mascena-java" heitght="25" width="40" 
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
             
-  <img align="center" alt="Gilberto Mascena-spring" height="25" width="40"
+  <img alingn="center" alt="Gilberto Mascena-spring" height="25" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
    
-  <img align="center" alt="Gilberto Mascena-maven" height="30" width="40"
+  <img alingn="center" alt="Gilberto Mascena-maven" height="30" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" />
           
-  <img align="center" alt="Gilberto Mascena-maven" height="30" width="40"
+  <img alingn="center" alt="Gilberto Mascena-maven" height="30" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg" />
           
-  <img align="center" alt="Gilberto Mascena-maven" height="50" width="40"
+  <img alingn="center" alt="Gilberto Mascena-maven" height="50" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
           
-  <img align="center" alt="Gilberto Mascena-git" height="30" width="40"
+  <img alingn="center" alt="Gilberto Mascena-git" height="30" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
           
-  <img align="center" alt="Gilberto Mascena-github" height="30" width="40"
+  <img alingn="center" alt="Gilberto Mascena-github" height="30" width="40"
    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
 
    ##
