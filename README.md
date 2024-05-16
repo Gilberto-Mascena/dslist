@@ -1,8 +1,8 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Gilberto-Mascena/dslist)
-![license](https://img.shields.io/github/license/Gilberto-Mascena/dslist)
-[![GitHub stars](https://img.shields.io/github/stars/Gilberto-Mascena/dslist)](https://GitHub.com/Gilberto-Mascena/dslist)
-[![GitHub issues](https://img.shields.io/github/issues/Gilberto-Mascena/dslist)](https://GitHub.com/Gilberto-Mascena/dslist)
-![tag](https://img.shields.io/github/v/release/Gilberto-Mascena/dslist?include_prereleases)
+[![license](https://img.shields.io/github/license/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/blob/main/LICENSE.md)
+[![GitHub stars](https://img.shields.io/github/stars/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/issues)
+[![tag](https://img.shields.io/github/v/release/Gilberto-Mascena/dslist?include_prereleases)](https://github.com/Gilberto-Mascena/dslist/releases)
 ![release](https://img.shields.io/github/release-date/Gilberto-Mascena/dslist)
 ![size](https://img.shields.io/github/repo-size/Gilberto-Mascena/dslist)
 
