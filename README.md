@@ -6,7 +6,7 @@
 ![release](https://img.shields.io/github/release-date/Gilberto-Mascena/dslist)
 ![size](https://img.shields.io/github/repo-size/Gilberto-Mascena/dslist)
 
-# *Intensivão Java Spring*
+# *Intensivão Java e Spring*
 
 ## *Aplicaçao BackEnd Java e Spring Boot de listas de jogos*
 
