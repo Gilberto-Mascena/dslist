@@ -17,19 +17,19 @@ spring:
 
   # Create script sql "create.sql" files in src/main/resources
 
-    hibernate:
-       ddl-auto: create
-    properties:
-        hibernate:
-          jdbc:
-            lob:
-              non_contextual_creation: true
-          hbm2ddl:
-            delimiter: ";"
-          jakarta:
-          persistence:
-            schema-generation:
-              create-source: metadata
-              scripts:
-                action: create
-                create-target: create.sql
+#    hibernate:
+#       ddl-auto: create
+#    properties:
+#        hibernate:
+#          jdbc:
+#            lob:
+#              non_contextual_creation: true
+#          hbm2ddl:
+#            delimiter: ";"
+#          jakarta:
+#          persistence:
+#            schema-generation:
+#              create-source: metadata
+#              scripts:
+#                action: create
+#                create-target: create.sql
