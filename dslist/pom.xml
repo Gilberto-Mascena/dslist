@@ -8,11 +8,11 @@
 		<version>3.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gilberto</groupId>
+	<groupId>br.com.gilbertodev</groupId>
 	<artifactId>dslist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dslist</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Intensivão Java Spring</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
