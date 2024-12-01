@@ -1,26 +1,25 @@
 package br.com.gilbertodev.dslist.services;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import br.com.gilbertodev.dslist.dto.GameListDTO;
 import br.com.gilbertodev.dslist.entities.GameList;
 import br.com.gilbertodev.dslist.projections.GameMinProjection;
 import br.com.gilbertodev.dslist.repositories.GameListRepository;
 import br.com.gilbertodev.dslist.repositories.GameRepository;
+import jakarta.annotation.Resource;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class GameListService {
 
-    @Autowired
+    @Resource
     private GameListRepository gameListRepository;
 
-    @Autowired
+    @Resource
     private GameRepository gameRepository;
-     
+
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll() {
         List<GameList> result = gameListRepository.findAll();
@@ -28,9 +27,9 @@ public class GameListService {
     }
 
     @Transactional
-    public void move(Long listId, int sourceIndex, int destinationIndex){
+    public void move(Long listId, int sourceIndex, int destinationIndex) {
 
-        List<GameMinProjection>  list = gameRepository.searchByList(listId);
+        List<GameMinProjection> list = gameRepository.searchByList(listId);
         GameMinProjection obj = list.remove(sourceIndex);
         list.add(destinationIndex, obj);
 

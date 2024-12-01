@@ -7,11 +7,11 @@ public class GameMinDTO {
 
     private Long id;
     private String title;
-    private Integer year;    
+    private Integer year;
     private String imgUrl;
     private String shortDescription;
 
-    public GameMinDTO(){        
+    public GameMinDTO() {
     }
 
     public GameMinDTO(Game entity) {
@@ -48,5 +48,5 @@ public class GameMinDTO {
 
     public String getShortDescription() {
         return shortDescription;
-    }     
+    }
 }
