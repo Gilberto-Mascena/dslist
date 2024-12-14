@@ -56,7 +56,7 @@ git clone git@github.com: Gilberto-Mascena/dslist.git
 mvn spring-boot:run
 ```
 - Access the address: http://localhost:8080/h2-console
-- Fill in the "JDBC URL" field with the value "jdbc:h2:mem:testdb, username "sa" and click in "Connect".
+- Fill in the "JDBC URL" field with the value "jdbc:h2:mem:testdb", username "sa" and click in "Connect".
 
 ### *With Postgres*
 - Open the project in an IDE of your choice.

@@ -55,7 +55,7 @@ Projeto desenvolvido em Java, utilizando o framework Spring Boot, na linha de co
     mvn spring-boot:run
 ```
 - Acesse o endereço: http://localhost:8080/h2-console
-- Preencha o campo "JDBC URL" com o valor "jdbc:h2:mem:testdb, username "sa" e clique em "Connect".
+- Preencha o campo "JDBC URL" com o valor "jdbc:h2:mem:testdb", username "sa" e clique em "Connect".
 
 
 ### *Com Postgres*
