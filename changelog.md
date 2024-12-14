@@ -1,4 +1,2 @@
-_**Mudanças nesta Versão**_
-
-- Primeira Mudança:
-    - _Adicionado novo workflow_ 
+_**Changes in this Version**_ 
+- _🎉 Updated the entire project_
