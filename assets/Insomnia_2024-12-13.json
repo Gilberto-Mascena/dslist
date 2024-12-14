@@ -1,0 +1,156 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-12-13T23:06:43.692Z",
+  "__export_source": "insomnia.desktop.app:v10.2.0",
+  "resources": [
+    {
+      "_id": "req_a00cd875088847f9bd5fd2963d1217e1",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731379729643,
+      "created": 1731379647216,
+      "url": "http://localhost:8080/games",
+      "name": "Games",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.1.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1731379647216,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_5e388a004301484da10f9e8d871fec10",
+      "parentId": null,
+      "modified": 1731379635267,
+      "created": 1731379635267,
+      "name": "dslist",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_c6b4074a5cc9412b92a3d6002a92a651",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731458192339,
+      "created": 1731456195482,
+      "url": "http://localhost:8080/games/3",
+      "name": "Games by id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.1.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726001523876,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_999cdde91da54b7eace4b8a91a9ad4d5",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731461580525,
+      "created": 1731458885268,
+      "url": "http://localhost:8080/lists",
+      "name": "Game lists",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.1.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723312462206,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1df95617c4e74f799b258533721f4eb6",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731463054321,
+      "created": 1731461531389,
+      "url": "http://localhost:8080/lists/2/games",
+      "name": "Game by lists",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.1.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1721967931371,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_e1bfda74a393eaf6201bfc41ba9bd0bba8ac2b55",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731379635271,
+      "created": 1731379635271,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1731379635271,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_e1bfda74a393eaf6201bfc41ba9bd0bba8ac2b55",
+      "parentId": "wrk_5e388a004301484da10f9e8d871fec10",
+      "modified": 1731379635273,
+      "created": 1731379635273,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
