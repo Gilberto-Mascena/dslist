@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Create 'dslist' directory
+        run: mkdir -p dslist
+
       - name: Verify directory existence (optional)
         run: |
           if [ ! -d "dslist" ]; then
@@ -52,5 +55,6 @@ jobs:
           asset_path: ./dslist.zip  # Use relative path
           asset_name: dslist.zip
           asset_content_type: application/zip
-          # build.outputs.run is set to '0' if the directory exists
+
+        # Only upload if the build step ran successfully
         if: success() && steps.build.outputs.run == '0'
