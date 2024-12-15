@@ -1,37 +1,31 @@
 on:
   push:
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*' # Push events to matching v*, e.g., v1.0, v20.15.10
 
-name: Create Release with Asset (Improved)
+name: Create Release with Asset
 
 jobs:
-  build:
-    name: Upload Release Asset (with checks)
+  release:
+    name: Build and Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Create 'dslist' directory
+      - name: Prepare Release Asset Directory
         run: mkdir -p dslist
-
-      - name: Verify directory existence (optional)
-        run: |
-          if [ ! -d "dslist" ]; then
-            echo "Skipping asset upload: 'dslist' directory not found."
-            exit 0
-          fi
-        # This step is optional and can be removed if preferred
 
       - name: Build Release Asset
         run: |
-          # Compress only if the directory exists
+          # Verify directory existence and compress files
           if [ -d "dslist" ]; then
-            zip -q -r dslist.zip ./*
+            zip -q -r dslist.zip dslist
+            echo "Asset created: dslist.zip"
+          else
+            echo "'dslist' directory not found. Skipping asset creation."
+            exit 0
           fi
-          # List any zip files created (optional)
-          ls -l *.zip
 
       - name: Create Release
         id: create_release
@@ -45,16 +39,13 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset (if zip exists)
-        id: upload-release-asset
+      - name: Upload Release Asset
+        if: success() && steps.create_release.outputs.upload_url
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dslist.zip  # Use relative path
+          asset_path: ./dslist.zip
           asset_name: dslist.zip
           asset_content_type: application/zip
-
-        # Only upload if the build step ran successfully
-        if: success() && steps.build.outputs.run == '0'
