@@ -15,7 +15,7 @@ jobs:
 
       - name: Build project
         run: |
-          zip -q -r dslist.zip -i dslist/* .
+          zip -q -r dslist.zip -i dslist/* 
           ls -l *.zip
 
       - name: Create Release
