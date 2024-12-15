@@ -28,7 +28,7 @@ jobs:
         run: |
           # Compress only if the directory exists
           if [ -d "dslist" ]; then
-            zip -q -r dslist.zip dslist/*
+            zip -q -r dslist.zip ./*
           fi
           # List any zip files created (optional)
           ls -l *.zip
