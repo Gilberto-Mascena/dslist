@@ -3,19 +3,31 @@ on:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
-name: Create Release
+name: Create Release with Asset (Improved)
 
 jobs:
   build:
-    name: Upload Release Asset
+    name: Upload Release Asset (with checks)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build project
+      - name: Verify directory existence (optional)
         run: |
-          zip -q -r dslist.zip dslist/* 
+          if [ ! -d "dslist" ]; then
+            echo "Skipping asset upload: 'dslist' directory not found."
+            exit 0
+          fi
+        # This step is optional and can be removed if preferred
+
+      - name: Build Release Asset
+        run: |
+          # Compress only if the directory exists
+          if [ -d "dslist" ]; then
+            zip -q -r dslist.zip dslist/*
+          fi
+          # List any zip files created (optional)
           ls -l *.zip
 
       - name: Create Release
@@ -30,13 +42,15 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
+      - name: Upload Release Asset (if zip exists)
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dslist.zip
+          asset_path: ./dslist.zip  # Use relative path
           asset_name: dslist.zip
           asset_content_type: application/zip
+          # build.outputs.run is set to '0' if the directory exists
+        if: success() && steps.build.outputs.run == '0'
