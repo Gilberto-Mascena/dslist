@@ -18,12 +18,12 @@ jobs:
         # Caso seu projeto seja baseado em Node.js ou outro sistema que requeira um setup específico
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Ajuste conforme a versão necessária para o seu projeto
+          node-version: '16'  # Ajuste conforme a versão necessária para o seu projeto
 
       - name: Build project
         run: |
           echo "Building project..."
-          zip -q -r dslist.zip dslist/*
+          zip -q -r dslist.zip .  # Comando para gerar o arquivo ZIP com os arquivos do projeto
           ls -l *.zip
 
       - name: Create Release
@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dslist.zip
+          asset_path: ./dslist.zip
           asset_name: dslist.zip
           asset_content_type: application/zip
 
