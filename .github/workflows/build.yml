@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*'  # Push events to matching v*, e.g., v1.0, v20.15.10
 
 name: Create Release
 
@@ -9,13 +9,21 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Node.js (se aplicável)
+        # Caso seu projeto seja baseado em Node.js ou outro sistema que requeira um setup específico
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'  # Ajuste conforme a versão necessária para o seu projeto
+
       - name: Build project
         run: |
-          zip -q -r dslist.zip dslist/* 
+          echo "Building project..."
+          zip -q -r dslist.zip dslist/*
           ls -l *.zip
 
       - name: Create Release
@@ -25,10 +33,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body_path: changelog.md
+          release_name: "Release ${{ github.ref }} - ${{ github.run_id }}"
+          body_path: changelog.md  # Pode ser um changelog gerado automaticamente (se necessário)
           draft: false
           prerelease: false
+
+      - name: Generate changelog (opcional)
+        if: !exists('changelog.md')
+        run: |
+          echo "Gerando changelog automaticamente..."
+          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > changelog.md
 
       - name: Upload Release Asset
         id: upload-release-asset
@@ -40,3 +54,8 @@ jobs:
           asset_path: dslist.zip
           asset_name: dslist.zip
           asset_content_type: application/zip
+
+      - name: Clean up
+        run: |
+          echo "Cleaning up..."
+          rm -rf dslist.zip  # Limpeza de arquivos temporários após o upload, se necessário
