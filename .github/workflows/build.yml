@@ -38,11 +38,11 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Generate changelog (opcional)
-        if: !exists('changelog.md')
-        run: |
-          echo "Gerando changelog automaticamente..."
-          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > changelog.md
+#      - name: Generate changelog (opcional)
+#        if: !exists('changelog.md')
+#        run: |
+#          echo "Gerando changelog automaticamente..."
+#          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > changelog.md
 
       - name: Upload Release Asset
         id: upload-release-asset
