@@ -1,24 +1,33 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Gilberto-Mascena/dslist)
-[![license](https://img.shields.io/github/license/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/blob/main/LICENSE.md)
-[![GitHub stars](https://img.shields.io/github/stars/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/Gilberto-Mascena/dslist)](https://github.com/Gilberto-Mascena/dslist/issues)
-[![tag](https://img.shields.io/github/v/release/Gilberto-Mascena/dslist?include_prereleases)](https://github.com/Gilberto-Mascena/dslist/releases)
-![release](https://img.shields.io/github/release-date/Gilberto-Mascena/dslist)
-![size](https://img.shields.io/github/repo-size/Gilberto-Mascena/dslist)
 
 [Português Brasileiro](https://github.com/Gilberto-Mascena/dslist/blob/main/README-pt_br.md) |
-[English](https://github.com/Gilberto-Mascena/dslist/blob/main/README.md) 
-## *🚀 Sobre o projeto*
+[English](https://github.com/Gilberto-Mascena/dslist/blob/main/README.md)
 
-#### Intensivão Java e Spring Boot, formação de desenvolvedor back-end java.
+![Status de Manutenção](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge)
+[![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/Gilberto-Mascena/dslist/build.yml?style=for-the-badge)](https://github.com/Gilberto-Mascena/dslist/actions)
+[![Licença](https://img.shields.io/github/license/Gilberto-Mascena/dslist?style=for-the-badge)](https://github.com/Gilberto-Mascena/dslist/blob/main/LICENSE.md)
+[![Estrelas no GitHub](https://img.shields.io/github/stars/Gilberto-Mascena/dslist?style=for-the-badge)](https://github.com/Gilberto-Mascena/dslist/stargazers)
+[![Problemas no GitHub](https://img.shields.io/github/issues/Gilberto-Mascena/dslist?style=for-the-badge)](https://github.com/Gilberto-Mascena/dslist/issues)
+[![Versão do Repositório](https://img.shields.io/github/v/release/Gilberto-Mascena/dslist?include_prereleases&style=for-the-badge)](https://github.com/Gilberto-Mascena/dslist/releases)
+![Data de Lançamento](https://img.shields.io/github/release-date/Gilberto-Mascena/dslist?style=for-the-badge)
+![Tamanho do Repositório](https://img.shields.io/github/repo-size/Gilberto-Mascena/dslist?style=for-the-badge)
 
-Criar um aplicação back-end com banco de dados para lista de jogos.
-Projeto desenvolvido em Java, utilizando o framework Spring Boot, na linha de comando
+## 🚀 Sobre o Projeto
 
-### Diagrama de classes
+### Este projeto faz parte do _Curso Intensivo Java e Spring Boot_, com foco no desenvolvimento back-end Java. O objetivo é construir uma aplicação back-end com um banco de dados para gerenciar uma lista de jogos, utilizando Java e o framework Spring Boot.
+
+## 📌 Recursos
+
+✅ Operações CRUD para gerenciar dados de jogos\
+✅ Design de API RESTful\
+✅ Suporte a banco de dados H2 e PostgreSQL\
+✅ Configuração baseada em ambiente\
+✅ Teste de API com Postman/Insomnia\
+✅ Integração Docker
+
+## 📌 Diagrama de Classe
 ![UML](assets/uml.png)
 
-### *Tecnologias usadas*
+## 🛠️ Tecnologias utilizadas
 - [Java 17](https://www.oracle.com/br/java/technologies/downloads/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Maven](https://maven.apache.org/)
@@ -28,7 +37,7 @@ Projeto desenvolvido em Java, utilizando o framework Spring Boot, na linha de co
 - [Docker](https://www.docker.com/)
 - [Git](https://git-scm.com/)
 
-### Pré requisitos
+## ⚙️ Pré-requisitos
 
 - [Java 17 ou superior](https://www.oracle.com/br/java/technologies/downloads/)
 - [Maven](https://maven.apache.org/)
@@ -36,55 +45,60 @@ Projeto desenvolvido em Java, utilizando o framework Spring Boot, na linha de co
 - [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/download) para testar a API no perfil de  desenvolvimento.
 - [Git](https://git-scm.com/)
 
-### Como executar o projeto:
+## 🚀 Executando o Projeto
 
-- Clone o projeto:
-- *Logado no GitHub*.
-```
-    git clone git@github.com:Gilberto-Mascena/dslist.git     
-```
-- *Sem estar logado no GitHub*.
-```
-    git clone https://github.com/Gilberto-Mascena/dslist.git
-``` 
+🔹 Clonando o Repositório
 
-### *Com H2 Database*
-- Abra um terminal ou prompt na pasta do projeto e execute o comando:
+✅ Se estiver logado no GitHub:
+```
+git clone git@github.com:Gilberto-Mascena/dslist.git
+```
+
+❌ Se não estiver logado no GitHub:
+```
+git clone https://github.com/Gilberto-Mascena/dslist.git
+```
+
+🔹 Executando com o Banco de Dados H2
+
+Abra um terminal na pasta do projeto e execute:
 
 ```
-    mvn spring-boot:run
+mvn spring-boot:run
 ```
-- Acesse o endereço: http://localhost:8080/h2-console
-- Preencha o campo "JDBC URL" com o valor "jdbc:h2:mem:testdb", username "sa" e clique em "Connect".
 
+Acesse o banco de dados em: http://localhost:8080/h2-console
 
-### *Com Postgres*
-- Abra o projeto em uma IDE de sua preferência.
-- Na raíz do projeto, renomeie o arquivo chamado sample.env para .env e adicione os dados nas variáveis criadas, salve o arquivo!.
-    - Exemplo de arquivo .env:
-```
-    DB_URL=jdbc:postgresql://localhost:5432/"your-database name!"
-    DB_USER=postgres
-    DB_PASSWORD=123456
-```
-- Carregue o arquivo .env no Sistema Operacional ou IDE.
-- Crie um banco de dados no Postgres com o nome que você definiu no arquivo .env.
-- Execute o script de criação de tabelas que está na pasta resources do projeto, "import.sql".
-- Mudar o perfil no arquivo application.yml para "prod".
-- Execute o projeto.
+Configure a URL do JDBC com ``jdbc:h2:mem:testdb``, nome de usuário ``sa`` e clique em Conectar.
 
-### *Acessando o banco de dados com testador de API*
+🔹 Executando com PostgreSQL
+
+Abra o projeto no seu IDE.
+
+Renomeie ``sample.env`` para ``.env`` na pasta raiz e configure as variáveis ​​do banco de dados:
+
+``DB_URL=jdbc:postgresql://localhost:5432/nome_do_seu_banco_de_dados``\
+``DB_USER=postgres``\
+``DB_PASSWORD=sua_senha``
+
+Carregue o arquivo .env no seu SO ou IDE.\
+Crie o banco de dados no PostgreSQL com o mesmo nome definido em .env.\
+Execute o script de criação de tabela localizado em ``resources/import.sql``.\
+Defina o perfil em application.yml para prod.\
+Inicie o aplicativo.
+
+## 🔎 Teste de API
+
 - Com o projeto em execução.
-- [Postman](https://www.postman.com/)
-- [Insomnia](https://insomnia.rest/download)
-- [Importe collection imsomnia](assets/Insomnia_2024-12-13.json)
-
-### *Documentação da API*
 - Com o projeto em execução.
 - Acesse o endereço: http://localhost:8080/swagger-ui.html
 
-### *Licença*
+## 📃 Documentação da API
+- Com o projeto em execução.
+- Acesse o endereço: http://localhost:8080/swagger-ui.html
 
-[*Licença MIT*](LICENSE.md) (*MIT*)
+## 📜 *Licença*
+
+*Este projeto é licenciado sob a Licença MIT. Veja mais detalhes em:* [_LICENSE.md_](./LICENSE.md)
 
 ### Gilberto | Dev _2023_
