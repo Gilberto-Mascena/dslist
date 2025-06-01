@@ -1,3 +1,4 @@
+# Perfil activation
 spring:
   profiles:
     active: ${APP_PROFILE:test}
@@ -6,3 +7,8 @@ spring:
 
 cors:
   origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+    
+# API configuration version
+dslist:
+  api:
+    version: 1.0.0
