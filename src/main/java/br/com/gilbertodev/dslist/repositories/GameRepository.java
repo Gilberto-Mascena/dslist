@@ -12,6 +12,7 @@ import java.util.List;
  * <p>Extends {@link JpaRepository} to provide standard CRUD operations and custom queries.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 public interface GameRepository extends JpaRepository<Game, Long> {
 
