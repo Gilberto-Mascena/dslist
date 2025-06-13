@@ -9,8 +9,8 @@ package br.com.gilbertodev.dslist.projections;
  * @author Gilberto Dev
  * @see br.com.gilbertodev.dslist.entities.Game
  * @see br.com.gilbertodev.dslist.repositories.GameRepository
+ * @since 1.0.0
  */
-
 public interface GameMinProjection {
 
     /**
