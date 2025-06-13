@@ -13,26 +13,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * REST controller for managing game lists.
- *
- * <p>Allows retrieving all lists, fetching games from a specific list,
- * and changing the order of games within a list.</p>
+ * REST controller for managing game lists within the DSList application.
+ * This controller provides API endpoints to retrieve all available game lists,
+ * fetch the games belonging to a specific list, and reorder games within a list.
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @RestController
 @RequestMapping(value = "/lists")
-@Tag(name = "Game Lists", description = "Endpoints for managing game lists")
+@Tag(name = "Game Lists", description = "Endpoints for managing game lists and their games")
 public class GameListController {
 
     private final GameListService gameListService;
     private final GameService gameService;
 
     /**
-     * Injects the required services via constructor.
+     * Constructs a new {@code GameListController} with the necessary services injected.
+     * Spring's dependency injection will automatically provide instances of
+     * {@link GameListService} and {@link GameService}.
      *
-     * @param gameListService the game list service
-     * @param gameService     the game service
+     * @param gameListService The service for managing game list operations.
+     * @param gameService     The service for managing individual game operations.
      */
     private GameListController(GameListService gameListService, GameService gameService) {
         this.gameListService = gameListService;
@@ -40,37 +42,58 @@ public class GameListController {
     }
 
     /**
-     * Retrieves all available game lists.
+     * Retrieves a list of all available game lists.
+     * Each list is represented by a {@link GameListDTO}, containing basic information
+     * about the list.
      *
-     * @return a list of {@link GameListDTO} objects
+     * @return A {@link List} of {@link GameListDTO} objects.
      */
-    @Operation(summary = "Find all lists", description = "Find all lists and their games", tags = {"lists catalog"})
+    @Operation(
+            summary = "Find all game lists",
+            description = "Retrieves a comprehensive list of all game lists available in the system.",
+            tags = {"lists catalog"}
+    )
     @GetMapping
     public List<GameListDTO> findAll() {
         return gameListService.findAll();
     }
 
     /**
-     * Retrieves all games belonging to a specific list.
+     * Retrieves a list of games belonging to a specific game list.
+     * The games are returned in a minimized format ({@link GameMinDTO}),
+     * suitable for display in a list view.
      *
-     * @param listId the ID of the list
-     * @return a list of {@link GameMinDTO} for the specified list
+     * @param listId The unique identifier of the game list.
+     * @return A {@link List} of {@link GameMinDTO} objects for the specified list.
      */
-    @Operation(summary = "Find list by id", description = "Find a list by its id and its game", tags = {"lists by id"})
+    @Operation(
+            summary = "Find games by list ID",
+            description = "Fetches all games associated with a specific game list, identified by its ID.",
+            tags = {"lists by id"}
+    )
     @GetMapping(value = "/{listId}/games")
     public List<GameMinDTO> findByList(@PathVariable Long listId) {
         return gameService.findByList(listId);
     }
 
     /**
-     * Moves a game from one position to another in a specific list.
+     * Moves a game from one position to another within a specific game list.
+     * This operation updates the order of games in the list based on the provided
+     * source and destination indices. The response typically indicates success
+     * without returning content.
      *
-     * @param listId the ID of the list
-     * @param body   an object containing the source and destination indices
+     * @param listId The unique identifier of the game list where the move operation occurs.
+     * @param body   A {@link ReplacementDTO} object containing the {@code sourceIndex}
+     * (current position of the game) and {@code destinationIndex}
+     * (desired new position of the game).
      */
-    @Operation(summary = "Move game", description = "Move a game's position in the list", tags = {"Game Lists"})
+    @Operation(
+            summary = "Move a game's position within a list",
+            description = "Updates the order of games in a specific list by moving a game from one index to another.",
+            tags = {"Game Lists"}
+    )
     @PutMapping(value = "/{listId}/replacement")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) // Indicates successful processing without content in the response body.
     public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
         gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
     }
