@@ -12,6 +12,7 @@ import java.util.Objects;
  * image URL, and short description.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 public class GameMinDTO {
 

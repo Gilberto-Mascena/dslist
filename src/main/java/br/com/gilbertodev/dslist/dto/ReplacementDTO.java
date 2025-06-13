@@ -9,6 +9,7 @@ import java.util.Objects;
  * games in a game list.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 public class ReplacementDTO {
 

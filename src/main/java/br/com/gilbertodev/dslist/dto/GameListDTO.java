@@ -10,6 +10,7 @@ import java.util.Objects;
  * <p>Used to transfer list information between layers, such as ID and name.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 public class GameListDTO {
 

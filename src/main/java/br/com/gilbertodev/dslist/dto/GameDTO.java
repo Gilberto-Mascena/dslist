@@ -11,6 +11,7 @@ import java.util.Objects;
  * <p>Used for transferring complete game information across layers.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 public class GameDTO {
 
