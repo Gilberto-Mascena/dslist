@@ -15,6 +15,7 @@ import java.util.List;
  * Service class responsible for managing operations related to {@link Game} entities.
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Service
 public class GameService {

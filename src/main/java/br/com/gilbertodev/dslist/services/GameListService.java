@@ -15,6 +15,7 @@ import java.util.List;
  * Service class responsible for handling business logic related to {@link GameList} entities.
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Service
 public class GameListService {
