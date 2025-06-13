@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Configuration;
  * and license information, which will be displayed in the generated Swagger UI.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Configuration
 public class SwaggerConfig {
 
-    // Inject the API version value from application.properties (ex: dslist.api.version=1.0.0)
     @Value("${dslist.api.version}")
     private String apiVersion;
 
