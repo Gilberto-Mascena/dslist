@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * and credentials.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
