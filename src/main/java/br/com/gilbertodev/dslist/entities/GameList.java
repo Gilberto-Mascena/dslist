@@ -8,6 +8,7 @@ import jakarta.persistence.*;
  * favorites, or user-defined categories.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Entity
 @Table(name = "tb_game_list")

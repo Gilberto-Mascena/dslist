@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
  * representing the many-to-many relationship between games and game lists.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Embeddable
 public class BelongingPK {

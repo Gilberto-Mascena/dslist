@@ -8,6 +8,7 @@ import jakarta.persistence.*;
  * image URL, and descriptions.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Entity
 @Table(name = "tb_game")

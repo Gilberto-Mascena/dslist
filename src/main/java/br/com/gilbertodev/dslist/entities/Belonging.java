@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
  * within a list.</p>
  *
  * @author Gilberto Dev
+ * @since 1.0.0
  */
 @Entity
 @Table(name = "tb_belonging")
