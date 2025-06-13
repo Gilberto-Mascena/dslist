@@ -69,7 +69,7 @@ public class GameListController {
      * @param body   an object containing the source and destination indices
      */
     @Operation(summary = "Move game", description = "Move a game's position in the list", tags = {"Game Lists"})
-    @PostMapping(value = "/{listId}/replacement")
+    @PutMapping(value = "/{listId}/replacement")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
         gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
