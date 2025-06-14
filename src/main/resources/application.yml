@@ -1,14 +1,46 @@
-# Perfil activation
-spring:
-  profiles:
-    active: ${APP_PROFILE:test}
-  jpa:
-    open-in-view: false
-
-cors:
-  origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
-    
 # API configuration version
 dslist:
   api:
     version: 1.0.0
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:devdb # Ou jdbc:postgresql://localhost:5432/devdb
+    driver-class-name: org.h2.Driver # Ou org.postgresql.Driver
+    username: sa # Ou seu usuário do PostgreSQL
+    password: # Senha do PostgreSQL, se necessário
+
+    # H2 Client
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true # Exibe SQL no console
+    properties:
+      hibernate:
+        format-sql: true # Formata SQL para legibilidade
+        use-sql-comments: true # Adiciona comentários para legibilidade
+        dialect: org.hibernate.dialect.H2Dialect # Ou org.hibernate.dialect.PostgreSQLDialect
+
+        # Create script sql "create.sql" files in src/main/resources
+        #
+        #    hibernate:
+        #       ddl-auto: create
+        #    properties:
+        #        hibernate:
+        #          jdbc:
+        #            lob:
+        #              non_contextual_creation: true
+        #          hbm2ddl:
+        #            delimiter: ";"
+        #          jakarta:
+        #          persistence:
+        #            schema-generation:
+        #              create-source: metadata
+        #              scripts:
+        #                action: create
+        #                create-target: create.sql
