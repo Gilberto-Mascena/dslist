@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "5cbdaf1b-0350-440f-a056-cefa1961744c",
+		"name": "DSList API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30070622"
+	},
+	"item": [
+		{
+			"name": "Environment",
+			"item": [
+				{
+					"name": "Base URL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Game Lists",
+			"item": [
+				{
+					"name": "Move game position in a list",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sourceIndex\": 0,\n    \"destinationIndex\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lists/{{listId}}/replacement",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lists",
+								"{{listId}}",
+								"replacement"
+							]
+						},
+						"description": "Updates the order of games in a specific list by moving a game from one index to another."
+					},
+					"response": []
+				},
+				{
+					"name": "Find all game lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/lists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lists"
+							]
+						},
+						"description": "Retrieves a comprehensive list of all game lists available in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Find games by list ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/lists/{{listId}}/games",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lists",
+								"{{listId}}",
+								"games"
+							]
+						},
+						"description": "Fetches all games associated with a specific game list, identified by its ID."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing game lists and their games"
+		},
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "Find all games (minimized details)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/games",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games"
+							]
+						},
+						"description": "Retrieves a list of all games with minimized details."
+					},
+					"response": []
+				},
+				{
+					"name": "Find a game by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/games/{{gameId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games",
+								"{{gameId}}"
+							]
+						},
+						"description": "Retrieves detailed information for a single game based on its ID."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for retrieving game information"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "listId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "gameId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
