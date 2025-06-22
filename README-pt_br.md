@@ -26,6 +26,79 @@
 ## Diagrama de Classe
 ![UML](assets/uml.png)
 
+## Estrutura do projeto
+
+```plantext
+├── assets
+│   ├── DSList API.postman_collection.json
+│   ├── dslist-home.png
+│   ├── dslist-page-1.png
+│   ├── dslist-page-2.png
+│   └── uml.png
+├── changelog.md
+├── LICENSE.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── README.md
+├── README-pt_br.md
+├── sample.env
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── br
+│   │   │       └── com
+│   │   │           └── gilbertodev
+│   │   │               └── dslist
+│   │   │                   ├── config
+│   │   │                   │   ├── SwaggerConfig.java
+│   │   │                   │   └── WebConfig.java
+│   │   │                   ├── controllers
+│   │   │                   │   ├── exceptions
+│   │   │                   │   │   ├── GlobalExceptionHandler.java
+│   │   │                   │   │   └── StandardError.java
+│   │   │                   │   ├── GameController.java
+│   │   │                   │   └── GameListController.java
+│   │   │                   ├── DslistApplication.java
+│   │   │                   ├── dto
+│   │   │                   │   ├── GameDTO.java
+│   │   │                   │   ├── GameListDTO.java
+│   │   │                   │   ├── GameMinDTO.java
+│   │   │                   │   └── ReplacementDTO.java
+│   │   │                   ├── entities
+│   │   │                   │   ├── Belonging.java
+│   │   │                   │   ├── BelongingPK.java
+│   │   │                   │   ├── Game.java
+│   │   │                   │   └── GameList.java
+│   │   │                   ├── exceptions
+│   │   │                   │   ├── GameNotFoundException.java
+│   │   │                   │   └── InvalidMoveException.java
+│   │   │                   ├── projections
+│   │   │                   │   └── GameMinProjection.java
+│   │   │                   ├── repositories
+│   │   │                   │   ├── GameListRepository.java
+│   │   │                   │   └── GameRepository.java
+│   │   │                   └── services
+│   │   │                       ├── GameListService.java
+│   │   │                       └── GameService.java
+│   │   └── resources
+│   │       ├── application-dev.yml
+│   │       ├── application-prod.yml
+│   │       ├── application-test.yml
+│   │       ├── application.yml
+│   │       └── import.sql
+│   └── test
+│       └── java
+│           └── br
+│               └── com
+│                   └── gilbertodev
+│                       └── dslist
+│                           ├── common
+│                           │   └── GameConstants.java
+│                           └── service
+│                               └── GameServiceTest.java
+```
+
 ## Imagens do Front-end
 ![home](assets/dslist-home.png)
 ---
