@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - 'v*'  # Push events to matching v*, e.g., v1.0, v20.15.10
+      - 'v*'
 
 name: Create Release
 
@@ -14,49 +14,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js (se aplicável)
-        # Caso seu projeto seja baseado em Node.js ou outro sistema que requeira um setup específico
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Ajuste conforme a versão necessária para o seu projeto
+          node-version: '16'
 
-      - name: Build project
+      - name: Build project and create zip
         run: |
           echo "Building project..."
-          zip -q -r dslist.zip .  # Comando para gerar o arquivo ZIP com os arquivos do projeto
-          ls -l *.zip
+           zip -q -r dslist.zip .  # Comando para gerar o arquivo ZIP com os arquivos do projeto
+          ls -l *.zip         
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: "Release ${{ github.ref }}"
-          body_path: CHANGELOG.md  # Pode ser um changelog gerado automaticamente (se necessário)
-          draft: false
+          files: dslist.zip
           prerelease: false
-
-      #      - name: Generate changelog (opcional)
-      #        if: !exists('CHANGELOG.md')
-      #        run: |
-      #          echo "Gerando changelog automaticamente..."
-      #          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > CHANGELOG.md
-
-      - name: Upload Release Asset
-        id: upload-release-asset
-        if: steps.create_release.outputs.upload_url != ''
-        uses: actions/upload-release-asset@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dslist.zip
-          asset_name: dslist.zip
-          asset_content_type: application/zip
-
-      - name: Clean up
-        run: |
-          echo "Cleaning up..."
-          rm -rf dslist.zip  # Limpeza de arquivos temporários após o upload, se necessário
+          body_path: CHANGELOG.md
