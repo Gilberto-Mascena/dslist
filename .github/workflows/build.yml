@@ -34,19 +34,20 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: "Release ${{ github.ref }}"
-          body_path: changelog.md  # Pode ser um changelog gerado automaticamente (se necessário)
+          body_path: CHANGELOG.md  # Pode ser um changelog gerado automaticamente (se necessário)
           draft: false
           prerelease: false
 
-#      - name: Generate changelog (opcional)
-#        if: !exists('changelog.md')
-#        run: |
-#          echo "Gerando changelog automaticamente..."
-#          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > changelog.md
+      #      - name: Generate changelog (opcional)
+      #        if: !exists('CHANGELOG.md')
+      #        run: |
+      #          echo "Gerando changelog automaticamente..."
+      #          git log --oneline --no-merges ${{ github.event.before }}..${{ github.sha }} > CHANGELOG.md
 
       - name: Upload Release Asset
         id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+        if: steps.create_release.outputs.upload_url != ''
+        uses: actions/upload-release-asset@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
