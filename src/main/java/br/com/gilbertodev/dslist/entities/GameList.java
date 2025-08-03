@@ -1,6 +1,10 @@
 package br.com.gilbertodev.dslist.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
  * Represents a list of games stored in the "tb_game_list" database table.
